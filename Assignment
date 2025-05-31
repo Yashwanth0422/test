@@ -1,1 +1,17 @@
-Pipeline1
+pipeline {
+    agent any
+
+    stages {
+        stage('Clone Repository') {
+            steps {
+                git 'https://github.com/octocat/Hello-World.git'
+            }
+        }
+
+        stage('List Files') {
+            steps {
+                sh 'ls -la'
+            }
+        }
+    }
+}
